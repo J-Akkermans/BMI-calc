@@ -6,18 +6,18 @@ function getValue(){
 
     //Formula
     var bmi = weight / (length * length);
-
     //Make it only show decimals
-    bmi = Math.floor(result * 100) / 100;
-    document.getElementById("Result").innerHTML = "This is your bmi" + " " + bmi.toFixed(2);
+    var result = bmi*10000;
+    result = Math.floor(result * 100) / 100;
+    document.getElementById("Result").innerHTML = "This is your bmi" + " " + result.toFixed(2);
 
     //Show underweight, normal, and overweight.
-    if(bmi < 18){
+    if(result < 18){
         document.getElementById("summary").innerHTML = "You are underweight.";
 
 
     }
-    else if(bmi > 25){
+    else if(result > 25){
         document.getElementById("summary").innerHTML = "You are overweight.";
     }
     else{
